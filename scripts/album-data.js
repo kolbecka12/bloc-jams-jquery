@@ -11,3 +11,6 @@ const album = {
     { title: 'Magenta', duration: '374.22', soundFileUrl: 'assets/music/magenta.mp3' }
   ]
 };
+
+//this script declares a global album object
+// that holds all of the data for the album.
