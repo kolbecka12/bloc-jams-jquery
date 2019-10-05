@@ -1,1 +1,29 @@
-// this script is blank. We'll use it to fulfill the third user story by implementing the logic for the music controls.
+{
+$('button#play-pause').on('click', function() {
+    player.playPause();
+    $(this).attr('playState', player.playState);
+  });
+
+$('button#next').on('click', function() {
+  if (player.playState !== 'playing') { return; }
+
+  const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+  const nextSongIndex = currentSongIndex + 1;
+  if (nextSongIndex >= album.songs.length) { return; }
+
+  const nextSong = album.songs[nextSongIndex];
+  player.playPause(nextSong);
+
+  });
+
+$('button#previous').on('click', function() {
+  if (player.playState !== 'playing') { return; } // the prev track and next track buttons only respond when a song is currently playing
+  const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+  const previousSongIndex = currentSongIndex - 1;
+  if (currentSongIndex === 0) { return; }
+
+  const previousSong = album.songs[previousSongIndex];
+  player.playPause(previousSong);
+  })
+
+}
