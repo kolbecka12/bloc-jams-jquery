@@ -4,11 +4,11 @@ constructor(song) {
 }
   playPauseAndUpdate(song) {
     player.playPause(song);
-
     const totalTimeElement = $('.total-time');
-    let duration = player.getDuration();
-    console.log(totalTimeElement, duration);
-    totalTimeElement.text( duration );
+    player.soundObject.bind("loadeddata", function(){
+      const duration = player.getDuration();
+      totalTimeElement.text( duration );
+    });
   }
 }
 var helper = new Helper;
