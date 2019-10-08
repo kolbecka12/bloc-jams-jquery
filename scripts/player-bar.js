@@ -36,6 +36,10 @@ setInterval( () => {
   const currentTime = player.getTime();
   const duration = player.getDuration();
   const percent = (currentTime / duration) * 100;
+
+  const totalTimeElement = $('.total-time');
+  totalTimeElement.text( duration );
+
   $('#time-control .current-time').text( currentTime );
   $('#time-control input').val(percent);
  }, 1000);

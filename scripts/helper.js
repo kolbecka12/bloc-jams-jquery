@@ -4,8 +4,8 @@ constructor(song) {
 }
   playPauseAndUpdate(song) {
     const totalTimeElement = $('.total-time');
-    const duration = player.getDuration(); //keep
-    totalTimeElement.text( duration ); //keep
+    const duration = player.getDuration();
+    totalTimeElement.text( duration );
     player.playPause(song);
   }
 }
